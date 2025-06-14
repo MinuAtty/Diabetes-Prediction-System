@@ -42,6 +42,7 @@ A Django-based web application that predicts the likelihood of diabetes in indiv
 
 - Evaluation Metrics: Accuracy, Precision, Recall, Confusion Matrix
 
+
 ## 📈 Recommendation System
 Depending on the result:
 - If Positive: Offers lifestyle modifications, food suggestions, doctor visits.
