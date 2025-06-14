@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction System - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction System</h1>
+        <form id="prediction-form">
+            <!-- ...existing form fields... -->
+
+            <!-- Add these input fields in your form section -->
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" step="0.1" min="50" max="300" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" step="0.1" min="20" max="300" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bmi">BMI (Auto-calculated):</label>
+                <input type="number" id="bmi" name="bmi" step="0.01" readonly>
+                <span id="bmi-category" class="bmi-status"></span>
+            </div>
+
+            <!-- ...existing form fields... -->
+        </form>
+
+        <div class="results">
+            <!-- ...existing results section... -->
+        </div>
+    </div>
+
+    <script>
+        // ...existing code...
+
+        // BMI calculation functionality
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+
+            if (height && weight) {
+                const heightInMeters = height / 100;
+                const bmi = weight / (heightInMeters * heightInMeters);
+
+                document.getElementById('bmi').value = bmi.toFixed(2);
+
+                // Update BMI category
+                const category = getBMICategory(bmi);
+                document.getElementById('bmi-category').textContent = category;
+                document.getElementById('bmi-category').className = `bmi-status ${category.toLowerCase().replace(' ', '-')}`;
+            } else {
+                document.getElementById('bmi').value = '';
+                document.getElementById('bmi-category').textContent = '';
+            }
+        }
+
+        function getBMICategory(bmi) {
+            if (bmi < 18.5) return 'Underweight';
+            if (bmi < 25) return 'Normal';
+            if (bmi < 30) return 'Overweight';
+            return 'Obese';
+        }
+
+        // Add event listeners for automatic calculation
+        document.getElementById('height').addEventListener('input', calculateBMI);
+        document.getElementById('weight').addEventListener('input', calculateBMI);
+
+        // ...existing code...
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+/* ...existing code... */
+
+.bmi-status {
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.bmi-status.underweight {
+    color: #3498db;
+    background-color: #e3f2fd;
+}
+
+.bmi-status.normal {
+    color: #27ae60;
+    background-color: #e8f5e8;
+}
+
+.bmi-status.overweight {
+    color: #f39c12;
+    background-color: #fef9e7;
+}
+
+.bmi-status.obese {
+    color: #e74c3c;
+    background-color: #fdeaea;
+}
+
+.form-group input[readonly] {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+/* ...existing code... */
