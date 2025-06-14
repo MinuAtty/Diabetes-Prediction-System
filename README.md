@@ -2,10 +2,10 @@
 
 ## Table of Contents
 - [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Machine Learning Model](#machine-learning-model)
-- [Recommendation System](#recommendation-system)
+- [Features](#🔍features)
+- [Technologies Used](#🧪technologies-used)
+- [Machine Learning Model](#🧠machine-learning-model)
+- [Recommendation System](#📈recommendation-system)
 
 ## Overview
 A Django-based web application that predicts the likelihood of diabetes in individuals using machine learning. The system provides tailored lifestyle recommendations, preventive tips, and diabetes management advice based on user inputs such as age, gender, BMI, and physical activity level.
